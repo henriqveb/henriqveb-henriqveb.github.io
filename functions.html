@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções JavaScript</title>
+    <script>
+        function MAIOR_MENOR(a, b, c, d, e) {
+            let valores = [a, b, c, d, e];
+            let maior = Math.max(...valores);
+            let menor = Math.min(...valores);
+            console.log("Maior valor:", maior);
+            console.log("Menor valor:", menor);
+        }
+
+        function VOGAL(c) {
+            c = c.toLowerCase();
+            if (c === 'a' || c === 'e' || c === 'i' || c === 'o' || c === 'u') {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+
+        function LIMITES(li, ls) {
+            let soma = 0;
+            console.log("Números pares no intervalo aberto:");
+            for (let i = li + 1; i < ls; i++) {
+                if (i % 2 === 0) {
+                    console.log(i);
+                    soma += i;
+                }
+            }
+            console.log("Somatório dos números pares:", soma);
+        }
+
+        function ORDEM(a, b, c) {
+            let valores = [a, b, c];
+            valores.sort((x, y) => x - y);
+            return valores;
+        }
+
+        function POSITIVO_NEGATIVO(x) {
+            return x >= 0;
+        }
+
+        function PAR_IMPAR(x) {
+            return x % 2 === 0;
+        }
+    </script>
+</head>
+<body>
+    <h1>Funções JavaScript</h1>
+    <p>Abra o console do navegador para ver os resultados das funções.</p>
+    <script>
+        // Exemplos de uso das funções
+        console.log("Função MAIOR_MENOR:");
+        MAIOR_MENOR(10, 20, 5, 8, 15);
+
+        console.log("Função VOGAL:");
+        console.log(VOGAL('A')); // Saída: 1
+        console.log(VOGAL('b')); // Saída: 0
+
+        console.log("Função LIMITES:");
+        LIMITES(3, 12);
+
+        console.log("Função ORDEM:");
+        console.log(ORDEM(10, 5, 8)); // Saída: [5, 8, 10]
+
+        console.log("Função POSITIVO_NEGATIVO:");
+        console.log(POSITIVO_NEGATIVO(10)); // Saída: true
+        console.log(POSITIVO_NEGATIVO(-5)); // Saída: false
+
+        console.log("Função PAR_IMPAR:");
+        console.log(PAR_IMPAR(10)); // Saída: true
+        console.log(PAR_IMPAR(7));  // Saída: false
+    </script>
+</body>
+</html>
