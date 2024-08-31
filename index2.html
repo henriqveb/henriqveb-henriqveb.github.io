@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSBC Imports</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="newStyle.css">
+    <script src="slider.js" defer></script>
   </head>
   <body>
 
     <header>
-      <h1 class="header_title"><a id="title_link" href="index.html"><span class="verde">HSBC</span><span  class="branco">imports</span></a></h1>
+      <h1 class="header_title"><a id="title_link" href="index.html"><span class="verde">HSBC</span><span class="branco">imports</span></a></h1>
 
       <div class="search-bar">
         <input type="text" placeholder="Buscar produtos...">
         <button class="pesquisar" type="button">
           <div> 
-            <img class="lupa" src="imgs/lupa.png" alt="">
+            <img class="lupa" src="imgs/lupa.png" alt="Buscar">
           </div>
         </button>
       </div>
@@ -31,8 +31,8 @@
     </header>
 
     <section>
-      <label for="slide1"></label>
-      <img id="slide" src="imgs\slide.png">
+      <label for="foto1"></label>
+      <img id="foto1" src="imgs/slide.png" alt="Slide">
     </section>
 
     <section>
@@ -42,50 +42,79 @@
     </section>
 
     <section>
-      <div class="barra">
-        <div class="produtos">
+      <div class="slider">
+        <div class="slides">
+          <!-- Slide 1 -->
           
-          <div>
-            <img id="imgproduto" src="imgs/tenisnike.png" alt>
+          <div class="slide">
+            <img src="imgs/tenisnike.png" alt="Nike Air Zoom Pegasus">
             <h3 class="nome-produto">Nike Air Zoom Pegasus</h3>
             <p class="descricao">Tênis Nike Air Zoom Pegasus</p>
             <p class="preco">R$ 199,00</p>
+            <button class="comprar">COMPRAR</button>
           </div>
-          <button class="comprar">COMPRAR</button>
-        
-        </div>
-        
-        <div class="produtos">
-          <div>
-            <img id="imgproduto" src="imgs/tenisadidas.png" alt>
+
+          <!-- Slide 2 -->
+          <div class="slide">
+            <img src="imgs/tenisadidas.png" alt="Adidas Coreracer">
             <h3 class="nome-produto">Adidas Coreracer</h3>
             <p class="descricao">Tênis Adidas Coreracer Masculino</p>
             <p class="preco">R$ 199,00</p>
+            <button class="comprar">COMPRAR</button>
           </div>
-          <button class="comprar">COMPRAR</button>
-        </div>
-        
-        <div class="produtos">
-          <div>
-            <img id="imgproduto" src="imgs/miband.png" alt>
+          <!-- Slide 3 -->
+          <div class="slide">
+            <img src="imgs/miband.png" alt="Mi Band 7">
             <h3 class="nome-produto">Mi Band 7</h3>
             <p class="descricao">Standard Edition 1.62''</p>
             <p class="preco">R$ 230,00</p>
+            <button class="comprar">COMPRAR</button>
           </div>
-          <button class="comprar">COMPRAR</button>
-        </div>
-        
-        <div class="produtos">
-          <div>
-            <img id="imgproduto" src="imgs/xiaomi12pro.png" alt>
+          <!-- Slide 4 -->
+          <div class="slide">
+            <img src="imgs/xiaomi12pro.png" alt="Xiaomi 12 Pro">
             <h3 class="nome-produto">Xiaomi 12 Pro</h3>
             <p class="descricao">5G, Preto, 8GB/256GB</p>
             <p class="preco">R$ 4.999,00</p>
+            <button class="comprar">COMPRAR</button>
           </div>
-          <button class="comprar">COMPRAR</button>
+          
+          <!--Mudar Produto-->
+          <div class="slide">
+            <img src="imgs/tenisadidas.png" alt="Adidas Coreracer">
+            <h3 class="nome-produto">Adidas Coreracer</h3>
+            <p class="descricao">Tênis Adidas Coreracer Masculino</p>
+            <p class="preco">R$ 199,00</p>
+            <button class="comprar">COMPRAR</button>
+          </div>
+          
+          <!--Mudar Produto-->
+          <div class="slide">
+            <img src="imgs/tenisadidas.png" alt="Adidas Coreracer">
+            <h3 class="nome-produto">Adidas Coreracer</h3>
+            <p class="descricao">Tênis Adidas Coreracer Masculino</p>
+            <p class="preco">R$ 199,00</p>
+            <button class="comprar">COMPRAR</button>
+          </div>
+
+          <!--Mudar Produto-->
+          <div class="slide">
+            <img src="imgs/tenisadidas.png" alt="Adidas Coreracer">
+            <h3 class="nome-produto">Adidas Coreracer</h3>
+            <p class="descricao">Tênis Adidas Coreracer Masculino</p>
+            <p class="preco">R$ 199,00</p>
+            <button class="comprar">COMPRAR</button>
+          </div>
         </div>
-      </div>
-      <!-- Adicione mais produtos aqui -->
+
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+      <div class="dots"></div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      <!--</div>  Aqui cria dois botões um seguido do outro sobre os dots, como se fosse um bug-->
+    </div>
     </section>
 
     <section class="acesso_rapido">
@@ -110,7 +139,7 @@
                 <h3>Trocas e devoluções</h3>
                 <span>Acompanhar trocas<br></span>
                 <span>Acompanhar devoluções<br></span>
-                <span>Solicitar troca ou devolução</span>	
+                <span>Solicitar troca ou devolução</span>  
               </div>  
             </a>
           </li>
@@ -130,7 +159,7 @@
     </section>
 
     <footer>
-      <p>&copy; 2023 HSBC Imports. Todos os direitos reservados.</p>
+      <p>&copy; 2024 HSBC Imports. Todos os direitos reservados.</p>
     </footer>
   </body>
 </html>
