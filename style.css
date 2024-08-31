@@ -171,6 +171,7 @@ footer { /* Rodapé */
 
 .search-bar { /* Barra de pesquisa */
   display: flex;
+  flex-direction: row;
   justify-content: center;
   margin: 20px;
   background-color: #232f3e;
@@ -201,6 +202,11 @@ footer { /* Rodapé */
   transition: 0.3s;
 }
 
+.lupa { /* Ícone da lupa */
+  width: 20px;
+  height: auto;
+}
+
 .search-bar button:hover { /* Cor do botão ao passar o mouse */
   background-color: #384b61;
   color: #fff;
@@ -212,6 +218,7 @@ footer { /* Rodapé */
 
 a:hover { /* Cor do texto ao passar o mouse */
   color: #ccc; /* Cor da fonte ao passar o mouse */
+  transition: 0.3s; /* Transição de cor */
 }
 
 .acesso_rapido { /* Acesso rápido */
@@ -264,12 +271,14 @@ a:hover { /* Cor do texto ao passar o mouse */
 
 @media (max-width: 768px) {
   header {
+    justify-content: space-between;
+    align-items: center;
     flex-direction: row;
     text-align: center;
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
     text-align: center;
   }
 
@@ -280,7 +289,7 @@ a:hover { /* Cor do texto ao passar o mouse */
   }
 
   .search-bar {
-    flex-direction: column;
+    flex-direction: row;
     margin: 20px 0;
     border-radius: 10px;
   }
@@ -288,13 +297,15 @@ a:hover { /* Cor do texto ao passar o mouse */
   .search-bar input[type="text"]{
     width: 100%;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
   
   .search-bar button {
-    width: 60%;
+    width: 20%;
     box-sizing: border-box;
-    border-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .blocks-item {
@@ -303,13 +314,22 @@ a:hover { /* Cor do texto ao passar o mouse */
 }
 
 @media (max-width: 480px) {
+  header {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+  }
+
   #header_title {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   nav ul {
-    flex-direction: column;
-    text-align: center;
+    font-size: 10px;
+    justify-content: end;
+    margin: 0;
+    padding: 0;
   }
 
   .barra h1 {
@@ -328,16 +348,22 @@ a:hover { /* Cor do texto ao passar o mouse */
   }
 
   .search-bar {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   .search-bar input[type="text"]{
-    width: 100%;
+    width: 50%;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   .search-bar button {
-    width: 60%;
+    width: 30%;
+    height: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .blocks-item {
