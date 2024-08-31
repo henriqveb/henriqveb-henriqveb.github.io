@@ -1,71 +1,346 @@
-/* Estilos CSS básicos, você pode personalizá-los conforme necessário */
+body { /* Corpo da página */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: black; /* Cor de fundo da página */
+}
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+
+title { /* Título da página */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+@media (max-width: 1080px) { /* Responsividade */
+  body {
+    font-size: 14px;
   }
-  
+}
+
+.verde { /* Cor do texto */
+  color: rgba(44, 248, 112, 0.829);
+  transition: 0.3s;
+}
+
+.verde:hover { /* Cor do texto ao passar o mouse */
+  color: white;
+  transition: 0.3s;
+}
+
+.branco { /* Cor do texto */
+  color: white;
+  transition: 0.3s;
+}
+
+.branco:hover { /* Cor do texto ao passar o mouse */
+  color: rgba(44, 248, 112, 0.829);
+  transition: 0.3s;
+}
+
+#slide {  /* Slide */
+  width: 100%; /* Largura do slide */
+  height: auto; /* Altura do slide */
+  background-color: #ccc; /* Cor de fundo do slide */
+  border-radius: 10px; /* Borda do slide */
+}
+
+.recomendados { /* Barra de navegação */
+  background-color: #232f3e; /* Cor de fundo da barra */
+  color: #fff; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+  display: flex; /* Alinhamento dos itens */
+  border-radius: 10px; /* Borda da barra */
+}
+
+.barra { /* Barra de navegação */
+  background-color: #232f3e; /* Cor de fundo da barra */
+  color: #fff; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+  display: flex; /* Alinhamento dos itens */
+  border-radius: 10px; /* Borda da barra */
+
+  overflow-x: scroll; /* Barra de rolagem horizontal */
+  overflow-y: hidden; /* Barra de rolagem vertical */
+  white-space: nowrap; /* Não quebrar linha */
+}
+
+header { /* Cabeçalho */
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #232f3e;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+nav ul { /* Lista de navegação */
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+
+nav ul li { /* Itens da lista de navegação */
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a { /* Links da lista de navegação */
+  color: #fff;
+  text-decoration: none;
+}
+
+#header_title { /* Cabeçalho */
+  padding: 1%;
+  justify-content: start;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: lighter;
+}
+
+#title_link { /* Link do título */
+  color: #fff;
+  text-decoration: none;
+}
+
+section { /* Seção */
+  margin: 4px;
+}
+
+.produtos { /* Produtos */
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: inline-block;
+  width: auto;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+#imgproduto { /* Imagem do produto */
+  width: auto;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.nome-produto { /* Nome do produto */
+  margin: 10px 0;
+}
+
+.preco { /* Preço do produto */
+  font-weight: bold;
+}
+
+.comprar { /* Botão de pesquisa */
+  padding: 4%;
+  background-color: rgba(40, 250, 110, 0.808);
+  color: rgb(26, 26, 26);
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.comprar:hover { /* Botão de pesquisa */
+  padding: 4%;
+  background-color: #07250ffa;
+  color: #ccc;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+footer { /* Rodapé */
+  background-color: #232f3e;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.search-bar { /* Barra de pesquisa */
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  background-color: #232f3e;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.search-bar input[type="text"] { /* Campo de texto */
+  padding: 4%;
+  width: auto;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.search-bar input[type="text"]:focus { /* Cor do campo de texto ao focar */
+  outline: none;
+}
+
+.search-bar button { /* Botão de pesquisa */
+  padding: 4%;
+  background-color: #ccc;
+  color: #232f3e;
+  border: none;
+  cursor: pointer;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: 0.3s;
+}
+
+.search-bar button:hover { /* Cor do botão ao passar o mouse */
+  background-color: #384b61;
+  color: #fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: background-color 0.3s;
+  transition: 0.3s;
+}
+
+a:hover { /* Cor do texto ao passar o mouse */
+  color: #ccc; /* Cor da fonte ao passar o mouse */
+}
+
+.acesso_rapido { /* Acesso rápido */
+  background-color: #232f3e; /* Cor de fundo da barra */
+  color: #fff; /* Cor do texto */
+  padding: 20px; /* Espaçamento interno */
+  text-align: center; /* Alinhamento do texto */
+  border-radius: 10px; /* Borda da barra */
+}
+
+.blocks-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.blocks-item {
+  background-color: black;
+  color: #232f3e;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.blocks-item:hover {
+  background-color: #07250ffa;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 20px;
+  flex: 1 1 calc(33.333% - 20px);
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+
+.blocks-item h3 {
+  margin: 0 0 10px;
+}
+
+.items-link {
+  color: #ccc;
+  text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
   header {
-    background-color: #232f3e;
-    color: #fff;
-    padding: 20px;
+    flex-direction: row;
     text-align: center;
   }
-  
+
   nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .search-bar {
+    flex-direction: column;
     text-align: center;
-    margin-top: 20px;
   }
-  
-  .search-bar input[type="text"] {
-    padding: 8px;
-    width: 300px;
+
+  .produtos {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+
+  .search-bar input[type="text"]{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
   }
   
   .search-bar button {
-    padding: 8px 20px;
-    background-color: #232f3e;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+    width: 60%;
+    box-sizing: border-box;
+    border-radius: 10px;
   }
-  
-  .slider {
-    background-color: #f2f2f2;
-    height: 300px;
+
+  .blocks-item {
+    flex: 1 1 calc(50% - 20px);
+}
+}
+
+@media (max-width: 480px) {
+  #header_title {
+    font-size: 24px;
   }
-  
-  .recommended-products {
-    background-color: #fff;
-    padding: 20px;
-  }
-  
-  .promotions {
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
-  
-  footer {
-    background-color: #232f3e;
-    color: #fff;
-    padding: 20px;
+
+  nav ul {
+    flex-direction: column;
     text-align: center;
   }
-  
+
+  .barra h1 {
+    font-size: 18px;
+  }
+
+  .produtos {
+    width: 80%;
+    max-width: 280px;
+    margin: 0 5px 0;
+  }
+
+  #imgproduto {
+    width: 110px;
+    height: auto;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar input[type="text"]{
+    width: 100%;
+  }
+
+  .search-bar button {
+    width: 60%;
+  }
+
+  .blocks-item {
+    flex: 1 1 100%;
+}
+}

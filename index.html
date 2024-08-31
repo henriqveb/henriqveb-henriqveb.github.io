@@ -1,99 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja Online de Importados</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Categorias de Produtos</a></li>
-        <li><a href="#">Saiba Mais</a></li>
-        <li><a href="functions.html">Funções em JavaScript</a></li>
-      </ul>
-    </nav>
-    <div class="search-bar">
-      <input type="text" placeholder="Pesquisar...">
-      <button>Pesquisar</button>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSBC Imports</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
 
-  <h2 class="slider">
-    Em alta
-    <!-- Conteúdo do slide aqui -->
-  </h2>
+      <h1 id="header_title"><a id="title_link" href="index.html"><span class="verde">HSBC</span><span  class="branco">imports</span></a></h1>
 
-  <h2 class="recommended-products">
-    Recomendados
-    <!-- Conteúdo dos produtos recomendados aqui -->
-  </h2>
+      <div class="search-bar">
+        <input type="text" placeholder="Buscar produtos..."
+          style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+        <button>Pesquisar</button>
+      </div>
 
-  <h2 class="promotions">
-    Promoções
-    <!-- Conteúdo das promoções aqui -->
-  </h2>
+      <nav>
+        <ul id="head">
+          <li><a href="#">Categorias</a></li>
+          <li><a href="#">Sobre Nós</a></li>
+          <li><a href="#">Carrinho</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="homepage-main-section">
-    <h1 class="titulo-secao">Olá, aqui você tem acesso rápido para:</h1>
-    
-    <section class="sections">
-      <ul class="blocks-list">
-        <li class="blocks-item" data-box-description="pedidos">
-          <a href="https://google.com" class="items-link">
-            <div class="box-header">
-              <div class="box-image"></div>
-              <h3>Meus pedidos</h3>
-            </div>
-            
-            <div class="box-data">
-              <span>Consultar pedidos</span>
-              <span>Rastrear entrega</span>
-              <span>Falar de entrega atrasada</span>
-            </div>  
-          </a>
-        </li>
-        
-        <li class="blocks-item" data-box-description="trocas-cancelamentos">
-          <a href="https://google.com" class="items-link">
-            <div class="box-header">
-              <div class="box-image"></div>
-              <h3>Trocas e devoluções</h3>
-            </div>
-
-            <div class="box-data">
-              <span>Acompanhar trocas</span>
-              <span>Acompanhar devoluções</span>
-              <span>Solicitar troca ou devolução</span>	
-            </div>  
-          </a>
-        </li>
-        
-        <li class="blocks-item" data-box-description="alterar-dados">
-          <a href="https://google.com" class="items-link">
-            <div class="box-header">
-              <div class="box-image"></div>
-              <h3>Meus dados</h3>
-            </div>
-
-            <div class="box-data">
-              <span>Informações pessoais</span>
-              <span>Senha e E-mail</span>
-              <span>Meus telefones</span>
-              <span>Endereços</span>
-            </div>  
-          </a>
-        </li>
-      </ul>
+    <section>
+      <label for="slide1"></label>
+      <img id="slide" src="imgs\slide.png">
     </section>
-  </section>
 
+    <section>
+      <div class="recomendados">
+        <h1 class="left" style="margin-left: 5px;" id="aaa">Recomendados</h1>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2023 Loja Online de Importados. Todos os direitos reservados.</p>
-  </footer>
-</body>
+    <section>
+      <div class="barra">
+        <div class="produtos">
+          <div>
+            <img id="imgproduto" src="imgs/tenisnike.png" alt>
+            <h3 class="nome-produto">Nike Air Zoom Pegasus</h3>
+            <p class="descricao">Tênis Nike Air Zoom Pegasus</p>
+            <p class="preco">R$ 199,00</p>
+          </div>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="produtos">
+          <div>
+            <img id="imgproduto" src="imgs/tenisadidas.png" alt>
+            <h3 class="nome-produto">Adidas Coreracer</h3>
+            <p class="descricao">Tênis Adidas Coreracer Masculino</p>
+            <p class="preco">R$ 199,00</p>
+          </div>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="produtos">
+          <div>
+            <img id="imgproduto" src="imgs/miband.png" alt>
+            <h3 class="nome-produto">Mi Band 7</h3>
+            <p class="descricao">Standard Edition 1.62''</p>
+            <p class="preco">R$ 230,00</p>
+          </div>
+          <button class="comprar">Comprar</button>
+        </div>
+        <div class="produtos">
+          <div>
+            <img id="imgproduto" src="imgs/xiaomi12pro.png" alt>
+            <h3 class="nome-produto">Xiaomi 12 Pro</h3>
+            <p class="descricao">5G, Preto, 8GB/256GB</p>
+            <p class="preco">R$ 4.999,00</p>
+          </div>
+          <button class="comprar">Comprar</button>
+        </div>
+      </div>
+      <!-- Adicione mais produtos aqui -->
+    </section>
+
+    <section class="acesso_rapido">
+      <h1 class="titulo-secao">Olá, aqui você tem acesso rápido para:</h1>
+      
+      <section class="sections">
+        <ul class="blocks-list">
+          <li class="blocks-item" data-box-description="pedidos">
+            <a href="" class="items-link">
+              <div class="box">
+                <h3>Meus pedidos</h3>
+                <span>Consultar pedidos<br></span>
+                <span>Rastrear entrega<br></span>
+                <span>Falar de entrega atrasada</span>
+              </div>  
+            </a>
+          </li>
+          
+          <li class="blocks-item" data-box-description="trocas-cancelamentos">
+            <a href="" class="items-link">
+              <div class="box">
+                <h3>Trocas e devoluções</h3>
+                <span>Acompanhar trocas<br></span>
+                <span>Acompanhar devoluções<br></span>
+                <span>Solicitar troca ou devolução</span>	
+              </div>  
+            </a>
+          </li>
+          
+          <li class="blocks-item" data-box-description="alterar-dados">
+            <a href="" class="items-link">
+              <div class="box">
+                <h3>Meus dados</h3>
+                <span>Informações pessoais<br></span>
+                <span>Senha e E-mail<br></span>
+                <span>Endereços</span>
+              </div>  
+            </a>
+          </li>
+        </ul>
+      </section>
+    </section>
+
+    <footer>
+      <p>&copy; 2023 HSBC Imports. Todos os direitos reservados.</p>
+    </footer>
+  </body>
 </html>
