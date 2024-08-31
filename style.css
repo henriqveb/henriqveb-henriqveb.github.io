@@ -100,15 +100,17 @@ header { /* Cabeçalho */
 }
 
 nav ul { /* Lista de navegação */
-  justify-content: space-evenly;
+  justify-content: center;
+  margin: 0 5px;
+  padding: 0;
   align-items: center;
   display: flex;
   list-style: none;
 }
 
 nav ul li { /* Itens da lista de navegação */
+  margin: 0 3px;
   display: inline-block;
-  margin-right: 20px;
 }
 
 nav ul li a { /* Links da lista de navegação */
@@ -116,7 +118,7 @@ nav ul li a { /* Links da lista de navegação */
   text-decoration: none;
 }
 
-#header_title { /* Cabeçalho */
+.header_title { /* Cabeçalho */
   padding: 1%;
   justify-content: start;
   align-items: center;
@@ -191,7 +193,7 @@ footer { /* Rodapé */
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
   background-color: #232f3e;
   color: #fff;
   border-radius: 10px;
@@ -210,7 +212,6 @@ footer { /* Rodapé */
 }
 
 .search-bar button { /* Botão de pesquisa */
-  padding: 4%;
   background-color: #ccc;
   color: #232f3e;
   border: none;
@@ -244,6 +245,7 @@ footer { /* Rodapé */
 
 .blocks-list {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;
@@ -281,51 +283,6 @@ footer { /* Rodapé */
   text-decoration: none;
 }
 
-
-@media (max-width: 768px) {
-  header {
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: row;
-    text-align: center;
-  }
-
-  .produtos {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto 20px;
-  }
-
-  .search-bar {
-    flex-direction: row;
-    margin: 20px 0;
-    border-radius: 10px;
-  }
-
-  .search-bar input[type="text"]{
-    width: 100%;
-    box-sizing: border-box;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-  }
-  
-  .search-bar button {
-    width: 20%;
-    box-sizing: border-box;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
-  .blocks-item {
-    flex: 1 1 calc(50% - 20px);
-  }
-}
-
 @media (max-width: 480px) {
   header {
     justify-content: space-between;
@@ -334,14 +291,14 @@ footer { /* Rodapé */
     text-align: center;
   }
 
-  #header_title {
-    font-size: 20px;
+  .header_title {
+    font-size: 100%;
   }
 
   nav ul {
     font-size: 10px;
-    justify-content: end;
-    margin: 0;
+    justify-content: center;
+    margin: 0 5px;
     padding: 0;
   }
 
@@ -363,6 +320,7 @@ footer { /* Rodapé */
   .search-bar {
     flex-direction: row;
     align-items: center;
+    transition: 0.3s;
   }
 
   .search-bar input[type="text"]{
@@ -370,13 +328,15 @@ footer { /* Rodapé */
     height: 30px;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    transition: 0.3s;
   }
 
   .search-bar button {
-    width: 30%;
+    width: 20%;
     height: 30px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    transition: 0.3s;
   }
 
   .blocks-item {
@@ -384,10 +344,58 @@ footer { /* Rodapé */
   }
 }
 
+@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+  }
 
+  .header_title {
+    font-size: 150%;
+  }
 
-@media (max-width: 1080px) { /* Responsividade */
-  body {
-    font-size: 14px;
+  nav ul {
+    font-size: 15px;
+    justify-content: center;
+    margin: 0 5px;
+    padding: 0;
+    transition: 0.3s;
+  }
+
+  .produtos {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  .search-bar {
+    flex-direction: row;
+    margin: 20px 0;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .search-bar input[type="text"]{
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: 0.3s;
+  }
+  
+  .search-bar button {
+    width: 20%;
+    height: 30px;
+    box-sizing: border-box;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: 0.3s;
+  }
+
+  .blocks-item {
+    flex: 1 1 calc(50% - 20px);
   }
 }
