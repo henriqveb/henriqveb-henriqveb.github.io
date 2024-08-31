@@ -13,12 +13,6 @@ title { /* Título da página */
   align-items: center;
 }
 
-@media (max-width: 1080px) { /* Responsividade */
-  body {
-    font-size: 14px;
-  }
-}
-
 .verde { /* Cor do texto */
   color: rgba(44, 248, 112, 0.829);
   transition: 0.3s;
@@ -36,6 +30,30 @@ title { /* Título da página */
 
 .branco:hover { /* Cor do texto ao passar o mouse */
   color: rgba(44, 248, 112, 0.829);
+  transition: 0.3s;
+}
+
+a { /* Cor do texto */
+  color: #fff; /* Cor da fonte */
+  text-decoration: none; /* Remover sublinhado */
+  transition: 0.3s; /* Transição de cor */
+}
+
+a:hover { /* Cor do texto ao passar o mouse */
+  color: #ccc; /* Cor da fonte ao passar o mouse */
+  transition: 0.3s; /* Transição de cor */
+}
+
+.conta {
+  width: 30px;
+  height: auto;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.conta:hover {
+  background-color: white;
   transition: 0.3s;
 }
 
@@ -216,11 +234,6 @@ footer { /* Rodapé */
   transition: 0.3s;
 }
 
-a:hover { /* Cor do texto ao passar o mouse */
-  color: #ccc; /* Cor da fonte ao passar o mouse */
-  transition: 0.3s; /* Transição de cor */
-}
-
 .acesso_rapido { /* Acesso rápido */
   background-color: #232f3e; /* Cor de fundo da barra */
   color: #fff; /* Cor do texto */
@@ -310,7 +323,7 @@ a:hover { /* Cor do texto ao passar o mouse */
 
   .blocks-item {
     flex: 1 1 calc(50% - 20px);
-}
+  }
 }
 
 @media (max-width: 480px) {
@@ -368,5 +381,13 @@ a:hover { /* Cor do texto ao passar o mouse */
 
   .blocks-item {
     flex: 1 1 100%;
+  }
 }
+
+
+
+@media (max-width: 1080px) { /* Responsividade */
+  body {
+    font-size: 14px;
+  }
 }
