@@ -20,7 +20,7 @@ body { /* Corpo da página */
   align-items: center;
   margin: 10vh auto;
   width: 100%;
-  max-width: 500px;
+  max-width: 70vw;
   padding: 20px;
   background-image: linear-gradient(to bottom, #232f3e, #000);
   color: #fff;
@@ -164,6 +164,7 @@ nav ul { /* Lista de navegação */
 
 nav ul li { /* Itens da lista de navegação */
   margin: 0 10px;
+  padding: 0 5px;
   display: inline-block;
 }
 
@@ -352,13 +353,14 @@ footer { /* Rodapé */
   }
 
   nav ul {
-    font-size: 10px;
     justify-content: center;
-    margin: 0 5px;
+    margin: 0 2px;
     padding: 0;
   }
 
   nav ul li {
+    padding: 0 0px;
+    font-size: small;
     margin: 0 5px;
   }
 
@@ -419,12 +421,14 @@ footer { /* Rodapé */
   nav ul {
     font-size: 15px;
     justify-content: center;
-    margin: 0 5px;
+    margin: 0 2px;
     padding: 0;
     transition: 0.3s;
   }
 
   nav ul li {
+    padding: 0 0px;
+    font-size: small;
     margin: 0 5px;
   }
 
@@ -478,12 +482,14 @@ footer { /* Rodapé */
 
   nav ul {
     justify-content: center;
-    margin: 0 5px;
+    margin: 0 0px;
     padding: 0;
     transition: 0.3s;
   }
 
   nav ul li {
+    padding: 0 0px;
+    font-size: small;
     margin: 0 5px;
   }
 }
