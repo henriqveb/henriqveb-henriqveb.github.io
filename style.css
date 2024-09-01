@@ -1,10 +1,48 @@
 body { /* Corpo da página */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: black; /* Cor de fundo da página */
 }
 
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#cadastro-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10vh auto;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  background-image: linear-gradient(to bottom, #232f3e, #000);
+  color: #fff;
+  border-radius: 10px;
+}
+
+.id-form {
+  font-size: 11px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: lighter;
+}
+
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  border-top-left-radius: 1px;
+}
 
 title { /* Título da página */
   font-family: Arial, sans-serif;
@@ -40,7 +78,7 @@ a { /* Cor do texto */
 }
 
 a:hover { /* Cor do texto ao passar o mouse */
-  color: #ccc; /* Cor da fonte ao passar o mouse */
+  color: #cccccc; /* Cor da fonte ao passar o mouse */
   transition: 0.3s; /* Transição de cor */
 }
 
@@ -158,18 +196,19 @@ section { /* Seção */
   font-weight: bold;
 }
 
-.comprar { /* Botão de pesquisa */
+.default-button { /* Botão de pesquisa */
   padding: 4%;
   background-color: rgba(40, 250, 110, 0.808);
   color: rgb(26, 26, 26);
   font-weight: bold;
   border: none;
   cursor: pointer;
+  margin-top: 10px;
   border-radius: 10px;
   transition: 0.3s;
 }
 
-.comprar:hover { /* Botão de pesquisa */
+.default-button:hover { /* Botão de pesquisa */
   padding: 4%;
   background-color: #07250ffa;
   color: #ccc;
@@ -183,8 +222,10 @@ section { /* Seção */
 footer { /* Rodapé */
   background-color: #232f3e;
   color: #fff;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
+  bottom: 0;
+  width: 100%;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
 }
@@ -245,7 +286,6 @@ footer { /* Rodapé */
 
 .blocks-list {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 0;

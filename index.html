@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSBC Imports</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
   </head>
   <body>
     <header>
@@ -15,17 +16,15 @@
         <input type="text" placeholder="Buscar produtos..."
           style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
         <button class="pesquisar" type="button">
-          <div>
-            <img class="lupa" src="imgs/lupa.png" alt="">
-          </div>
+          <img class="lupa" src="imgs/lupa.png" alt="">
         </button>
       </div>
 
       <nav class="head">
         <ul id="head">
-          <li><a href="#">Categorias</a></li>
-          <li><a href="#">Carrinho</a></li>
-          <li><a href="#"><img class="conta" src="imgs/conta.png" alt="Conta"></a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -37,7 +36,7 @@
 
     <section>
       <div class="recomendados">
-        <h1 class="left" style="margin-left: 5px;" id="aaa">Recomendados</h1>
+        <h1>Recomendados</h1>
       </div>
     </section>
 
@@ -50,7 +49,7 @@
             <p class="descricao">Tênis Nike Air Zoom Pegasus</p>
             <p class="preco">R$ 199,00</p>
           </div>
-          <button class="comprar">Comprar</button>
+          <button class="default-button">Comprar</button>
         </div>
         <div class="produtos">
           <div>
@@ -59,7 +58,7 @@
             <p class="descricao">Tênis Adidas Coreracer Masculino</p>
             <p class="preco">R$ 199,00</p>
           </div>
-          <button class="comprar">Comprar</button>
+          <button class="default-button">Comprar</button>
         </div>
         <div class="produtos">
           <div>
@@ -68,7 +67,7 @@
             <p class="descricao">Standard Edition 1.62''</p>
             <p class="preco">R$ 230,00</p>
           </div>
-          <button class="comprar">Comprar</button>
+          <button class="default-button">Comprar</button>
         </div>
         <div class="produtos">
           <div>
@@ -77,10 +76,10 @@
             <p class="descricao">5G, Preto, 8GB/256GB</p>
             <p class="preco">R$ 4.999,00</p>
           </div>
-          <button class="comprar">Comprar</button>
+          <button class="default-button">Comprar</button>
         </div>
       </div>
-      <!-- Adicione mais produtos aqui -->
+      <!-- Falta adicionar mais produtos -->
     </section>
 
     <section class="acesso_rapido">
@@ -89,34 +88,28 @@
       <section class="sections">
         <ul class="blocks-list">
           <li class="blocks-item" data-box-description="pedidos">
-            <a href="" class="items-link">
+            <a href="login.html" class="items-link">
               <div class="box">
-                <h3>Meus pedidos</h3>
-                <span>Consultar pedidos<br></span>
-                <span>Rastrear entrega<br></span>
-                <span>Falar de entrega atrasada</span>
+                <h3>Login</h3>
+                <span>Faça login para ter acesso completo às funcionalidades do site.</span>
               </div>  
             </a>
           </li>
           
           <li class="blocks-item" data-box-description="trocas-cancelamentos">
-            <a href="" class="items-link">
+            <a href="cadastro.html" class="items-link">
               <div class="box">
-                <h3>Trocas e devoluções</h3>
-                <span>Acompanhar trocas<br></span>
-                <span>Acompanhar devoluções<br></span>
-                <span>Solicitar troca ou devolução</span>	
+                <h3>Cadastro</h3>
+                <span>Cadastre-se para receber atualizações e promoções, e ter uma experiência completa.</span>
               </div>  
             </a>
           </li>
           
           <li class="blocks-item" data-box-description="alterar-dados">
-            <a href="" class="items-link">
+            <a href="contato.html" class="items-link">
               <div class="box">
-                <h3>Meus dados</h3>
-                <span>Informações pessoais<br></span>
-                <span>Senha e E-mail<br></span>
-                <span>Endereços</span>
+                <h3>Contato</h3>
+                <span>Entre em contato conosco para fazer reclamações, sugestões e esclarecimentos de dúvidas.</span>
               </div>  
             </a>
           </li>

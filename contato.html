@@ -24,20 +24,16 @@
 
             <nav class="head">
                 <ul id="head">
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
                 </ul>
             </nav>
         </header>
 
         <div id="pagecontainer">
             <div id="cadastro-container">
-                <h1 class="header_title">Identificação</h1>
+                <h1 class="header_title">Insira seus dados</h1>
                 <form action="index.html" method="POST">
-                    <div>
-                        <label for="nome" class="id-form">Nome</label>
-                        <br>
-                        <input type="text" name="nome" id="nome" class="form-cadastro" required>
-                    </div>
     
                     <div>
                         <label for="email" class="id-form">E-mail</label>
@@ -50,21 +46,9 @@
                         <br>
                         <input type="password" name="senha" id="senha" class="form-cadastro" required>
                     </div>
-    
-                    <div>
-                        <label for="telefone" class="id-form">Telefone</label>
-                        <br>
-                        <input type="tel" name="telefone" id="telefone" class="form-cadastro" required>
-                    </div>
-    
-                    <div>
-                        <label for="endereco" class="id-form">Endereço</label>
-                        <br>
-                        <input type="text" name="endereco" id="endereco" class="form-cadastro" required>
-                    </div>
-                    <input type="submit" value="Cadastrar" class="default-button">
-                    <a href="login.html">
-                        <button type="button"  class="default-button">Já tem uma conta? Login</button>    
+                    <input type="submit" value="Login" class="default-button">
+                    <a href="cadastro.html">
+                        <button type="button"  class="default-button">Não tem uma conta? Cadastro</button>    
                     </a>
                 </form>
             </div>

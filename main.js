@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-/*
+        /*
         // Validação de Telefone
         const telefoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
         if (!telefoneRegex.test(telefone)) {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             return;
         }
-*/
+        */
 
         // Validação de Endereço
         if (endereco.length < 10) {
