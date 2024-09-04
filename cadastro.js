@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Validação do Formulário de Cadastro
-    const formCadastro = document.querySelector('form[action="index.html"]');
+    const formCadastro = document.querySelector('form[action="cadastro.html"]');
     formCadastro.addEventListener('submit', function(event) {
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        /*
         // Validação de Telefone
         const telefoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/;
         if (!telefoneRegex.test(telefone)) {
@@ -38,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
             event.preventDefault();
             return;
         }
-        */
 
         // Validação de Endereço
         if (endereco.length < 10) {
@@ -59,16 +57,5 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             alert('Por favor, insira um termo de pesquisa.');
         }
-    });
-
-    // Interatividade nas Seções
-    const blocksItems = document.querySelectorAll('.blocks-item');
-    blocksItems.forEach(function(item) {
-        item.addEventListener('mouseenter', function() {
-            item.style.backgroundColor = '#f2f2f2';
-        });
-        item.addEventListener('mouseleave', function() {
-            item.style.backgroundColor = '';
-        });
     });
 });
