@@ -3,10 +3,9 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Cadastro</title>
+        <title>Cadastro - HSBC Imports</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel="stylesheet" href="style.css">
-        <script src='main.js'></script>
     </head>
     <body>
         <header>
@@ -32,47 +31,134 @@
         <div id="pagecontainer">
             <div id="cadastro-container">
                 <h1 class="header_title">Identificação</h1>
-                <form action="index.html" method="POST">
-                    <div>
+                <form id="cadastro" action="login.html">
+                    <div class="campos">
                         <label for="nome" class="id-form">Nome</label>
                         <br>
-                        <input type="text" name="nome" id="nome" class="form-cadastro" required>
+                        <input type="text" name="nome" id="nome"
+                            class="form-cadastro" placeholder="Digite seu nome"
+                            oninput="nameValidate()" required>
+                        <span class="span-required">O nome deve ter pelo menos 3
+                            caracteres</span>
                     </div>
-    
-                    <div>
+
+                    <div class="campos">
                         <label for="email" class="id-form">E-mail</label>
                         <br>
-                        <input type="email" name="email" id="email" class="form-cadastro" required>
+                        <input type="email" name="email" id="email"
+                            class="form-cadastro"
+                            placeholder="Digite seu endereço de e-mail"
+                            oninput="emailValidate()" required>
+                        <span class="span-required">Digite um e-mail válido</span>
                     </div>
-    
-                    <div>
-                        <label for="senha" class="id-form">Senha</label>
-                        <br>
-                        <input type="password" name="senha" id="senha" class="form-cadastro" required>
-                    </div>
-    
-                    <div>
+
+                    <div class="campos">
                         <label for="telefone" class="id-form">Telefone</label>
                         <br>
-                        <input type="tel" name="telefone" id="telefone" class="form-cadastro" required>
+                        <input type="tel" name="telefone" id="telefone"
+                            class="form-cadastro"
+                            placeholder="Digite seu número de telefone"
+                            oninput="numberValidate()" required>
+                        <span class="span-required">Digite um número de telefone válido</span>
                     </div>
-    
-                    <div>
-                        <label for="endereco" class="id-form">Endereço</label>
+
+                    <div class="campos">
+                        <label for="senha" class="id-form">Senha</label>
                         <br>
-                        <input type="text" name="endereco" id="endereco" class="form-cadastro" required>
+                        <input type="text" name="senha" id="senha"
+                            class="form-cadastro" placeholder="Crite uma senha"
+                            oninput="mainPasswordValidate()" required>
+                        <span class="span-required">A senha deve ter no mínimo 8 caracteres</span>
                     </div>
-                    <input type="submit" value="Cadastrar" class="default-button">
+
+                    <div class="campos">
+                        <label for="confirma-senha" class="id-form">Repita a senha</label>
+                        <br>
+                        <input type="text" name="confirma-senha"
+                            id="confirma-senha" class="form-cadastro"
+                            placeholder="Repita a senha"
+                            oninput="comparePassword()" required>
+                        <span class="span-required">As senhas devem ser compatíveis</span>
+                    </div>
+
+                    <input type="submit" value="Cadastrar"
+                        class="default-button">
+
                     <a href="login.html">
-                        <button type="button"  class="default-button">Já tem uma conta? Login</button>    
+                        <button type="button" class="default-button">Já tem uma conta? Login</button>
                     </a>
                 </form>
             </div>
         </div>
-        
 
         <footer>
             <p>&copy; 2024 HSBC Imports. Todos os direitos reservados.</p>
-          </footer>
+        </footer>
     </body>
+
+    <script>
+        const form        = document.getElementById('cadastro');
+        const campos      = document.querySelectorAll('.form-cadastro');
+        const spans       = document.querySelectorAll('.span-required');
+        const emailRegex  = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+        const numberRegex = /(?:(^\+\d{2})?)(?:([1-9]{2})|([0-9]{3})?)(\d{4,5})(\d{4})/;
+
+        form.addEventListener('submit', (event) => {
+            nameValidate();
+            emailValidate();
+            mainPasswordValidate();
+            comparePassword();
+        });
+
+        function setError(index) {
+            campos[index].style.border = '2px solid red';
+            spans[index].style.display = 'block';
+        }
+
+        function removeError(index) {
+            campos[index].style.border = '';
+            spans[index].style.display = 'none';
+        }
+
+        function nameValidate() {
+            if(campos[0].value.length < 3) {
+                setError(0);
+            } else {
+                removeError(0);
+            }
+        }
+
+        function emailValidate() {
+            if(!emailRegex.test(campos[1].value)) {
+                setError(1);
+            } else {
+                removeError(1);
+            }
+        }
+
+        function numberValidate() {
+            if(!numberRegex.test(campos[2].value)) {
+                setError(2);
+            } else {
+                removeError(2);
+            }
+        }
+
+        function mainPasswordValidate() {
+            if(campos[3].value.length < 8) {
+                setError(3);
+            } else {
+                removeError(3);
+                comparePassword();
+            }
+        }
+
+        function comparePassword() {
+            if(campos[3].value == campos[4].value && campos[4].value.length >= 8) {
+                removeError(4);
+            } else {
+                setError(4);
+            }
+        }
+    </script>
 </html>

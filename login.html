@@ -3,10 +3,9 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <title>Cadastro</title>
+        <title>Login - HSBC Imports</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel="stylesheet" href="style.css">
-        <script src='main.js'></script>
     </head>
     <body>
         <header>
@@ -32,18 +31,18 @@
         <div id="pagecontainer">
             <div id="cadastro-container">
                 <h1 class="header_title">Insira seus dados</h1>
-                <form action="index.html" method="POST">
+                <form id="login" action="index.html">
     
-                    <div>
+                    <div class="campos">
                         <label for="email" class="id-form">E-mail</label>
                         <br>
-                        <input type="email" name="email" id="email" class="form-cadastro" required>
+                        <input type="email" name="email" id="email" class="form-login" oninput="emailValidate()" required>
                     </div>
     
-                    <div>
+                    <div class="campos">
                         <label for="senha" class="id-form">Senha</label>
                         <br>
-                        <input type="password" name="senha" id="senha" class="form-cadastro" required>
+                        <input type="password" name="senha" id="senha" class="form-login" oninput="mainPasswordValidate()" required>
                     </div>
                     <input type="submit" value="Login" class="default-button">
                     <a href="cadastro.html">
@@ -58,4 +57,45 @@
             <p>&copy; 2024 HSBC Imports. Todos os direitos reservados.</p>
           </footer>
     </body>
+
+    <script>
+        const form        = document.getElementById('cadastro');
+        const campos      = document.querySelectorAll('.form-cadastro');
+        const spans       = document.querySelectorAll('.span-required');
+        const emailRegex  = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+        form.addEventListener('submit', (event) => {
+            nameValidate();
+            emailValidate();
+            mainPasswordValidate();
+            comparePassword();
+        });
+
+        function setError(index) {
+            campos[index].style.border = '2px solid red';
+            spans[index].style.display = 'block';
+        }
+
+        function removeError(index) {
+            campos[index].style.border = '';
+            spans[index].style.display = 'none';
+        }
+
+        function emailValidate() {
+            if(!emailRegex.test(campos[1].value)) {
+                setError(1);
+            } else {
+                removeError(1);
+            }
+        }
+
+        function mainPasswordValidate() {
+            if(campos[2].value.length < 8) {
+                setError(2);
+            } else {
+                removeError(2);
+                comparePassword();
+            }
+        }
+    </script>
 </html>
