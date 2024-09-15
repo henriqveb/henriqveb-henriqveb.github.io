@@ -32,69 +32,85 @@
             <div id="cadastro-container">
                 <h1 class="header_title">Insira seus dados</h1>
                 <form id="login" action="index.html">
-    
+
                     <div class="campos">
                         <label for="email" class="id-form">E-mail</label>
                         <br>
-                        <input type="email" name="email" id="email" class="form-login" oninput="emailValidate()" required>
+                        <input type="email" name="email" id="email"
+                            class="form-login" oninput="emailValidate()"
+                            required>
+                        <span class="span-required">Digite um e-mail
+                            válido</span>
                     </div>
-    
+
                     <div class="campos">
                         <label for="senha" class="id-form">Senha</label>
                         <br>
-                        <input type="password" name="senha" id="senha" class="form-login" oninput="mainPasswordValidate()" required>
+                        <input type="password" name="senha" id="senha"
+                            class="form-login" oninput="mainPasswordValidate()"
+                            required>
+                        <span class="span-required">A senha deve ter no mínimo 8 caracteres</span>
                     </div>
                     <input type="submit" value="Login" class="default-button">
                     <a href="cadastro.html">
-                        <button type="button"  class="default-button">Não tem uma conta? Cadastro</button>    
+                        <button type="button" class="default-button">Não tem uma
+                            conta? Cadastro</button>
                     </a>
                 </form>
             </div>
         </div>
-        
 
         <footer>
             <p>&copy; 2024 HSBC Imports. Todos os direitos reservados.</p>
-          </footer>
+        </footer>
     </body>
 
     <script>
-        const form        = document.getElementById('cadastro');
-        const campos      = document.querySelectorAll('.form-cadastro');
+        const form        = document.getElementById('login');
+        const campos      = document.querySelectorAll('.form-login');
         const spans       = document.querySelectorAll('.span-required');
         const emailRegex  = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
+        let inputsValidated = new Array(campos.length);
+        inputsValidated.fill(0);
+
         form.addEventListener('submit', (event) => {
-            nameValidate();
             emailValidate();
             mainPasswordValidate();
-            comparePassword();
+
+            let redirect = inputsValidated.every(elemento => elemento === 1);
+
+            if (!redirect) {
+                event.preventDefault();
+                alert('Preencha o formulário corretamente!');
+            }
         });
 
         function setError(index) {
             campos[index].style.border = '2px solid red';
             spans[index].style.display = 'block';
+            inputsValidated[index] = 0;
         }
 
         function removeError(index) {
             campos[index].style.border = '';
             spans[index].style.display = 'none';
+            inputsValidated[index] = 1;
         }
 
         function emailValidate() {
-            if(!emailRegex.test(campos[1].value)) {
-                setError(1);
+            if(!emailRegex.test(campos[0].value)) {
+                setError(0);
             } else {
-                removeError(1);
+                removeError(0);
             }
         }
 
         function mainPasswordValidate() {
-            if(campos[2].value.length < 8) {
-                setError(2);
+            if(campos[1].value.length < 8) {
+                setError(1);
             } else {
-                removeError(2);
-                comparePassword();
+                removeError(1);
             }
         }
     </script>

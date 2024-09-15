@@ -45,6 +45,7 @@ body { /* Corpo da página */
   border: none;
   border-radius: 10px;
   border-top-left-radius: 1px;
+  outline: none;
 }
 
 .form-login {
@@ -56,6 +57,7 @@ body { /* Corpo da página */
   border: none;
   border-radius: 10px;
   border-top-left-radius: 1px;
+  outline: none;
 }
 
 .form-contato {
@@ -68,6 +70,7 @@ body { /* Corpo da página */
   border-radius: 10px;
   border-top-left-radius: 1px;
   border-bottom-right-radius: 1px;
+  outline: none;
 }
 
 .span-required {

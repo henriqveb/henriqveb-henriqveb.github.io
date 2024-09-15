@@ -6,15 +6,12 @@
         <title>Contato - HSBC Imports</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <script src="main.js"></script>
     </head>
     <body>
         <header>
             <h1 class="header_title"><a id="title_link" href="index.html"><span
                         class="verde">HSBC</span><span
                         class="branco">imports</span></a></h1>
-
-            
 
             <nav class="head">
                 <ul id="head">
@@ -27,27 +24,72 @@
         <div id="pagecontainer">
             <div id="cadastro-container">
                 <h1 class="header_title">Insira seus dados</h1>
-                <form action="index.html" method="POST">
-    
+                <form id="contato" action="index.html">
+
                     <div>
                         <label for="email" class="id-form">E-mail</label>
                         <br>
-                        <input type="email" name="email" id="email" class="form-cadastro" required>
+                        <input type="email" name="email" id="email"
+                            class="form-cadastro" oninput="emailValidate()"
+                            required>
+                        <span class="span-required">Digite um e-mail
+                            válido</span>
                     </div>
-    
+
                     <div>
                         <label for="senha" class="id-form">Mensagem</label>
                         <br>
-                        <textarea class="form-contato" rows="10" placeholder="Digite sua mensagem"></textarea>
+                        <textarea class="form-contato" rows="10"
+                            placeholder="Digite sua mensagem"></textarea>
                     </div>
                     <input type="submit" value="Enviar" class="default-button">
                 </form>
             </div>
         </div>
-        
 
         <footer>
             <p>&copy; 2024 HSBC Imports. Todos os direitos reservados.</p>
-          </footer>
+        </footer>
     </body>
+
+    <script>
+        const form        = document.getElementById('contato');
+        const campos      = document.querySelectorAll('.form-cadastro');
+        const spans       = document.querySelectorAll('.span-required');
+        const emailRegex  = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+        let inputsValidated = new Array(campos.length);
+        inputsValidated.fill(0);
+
+        form.addEventListener('submit', (event) => {
+            emailValidate();
+
+            let redirect = inputsValidated.every(elemento => elemento === 1);
+
+            if (!redirect) {
+                event.preventDefault();
+                alert('Preencha o formulário corretamente!');
+            }
+        });
+
+        function setError(index) {
+            campos[index].style.border = '2px solid red';
+            spans[index].style.display = 'block';
+            inputsValidated[index] = 0;
+        }
+
+        function removeError(index) {
+            campos[index].style.border = '';
+            spans[index].style.display = 'none';
+            inputsValidated[index] = 1;
+        }
+
+        function emailValidate() {
+            if(!emailRegex.test(campos[0].value)) {
+                setError(0);
+            } else {
+                removeError(0);
+            }
+        }
+    </script>
 </html>

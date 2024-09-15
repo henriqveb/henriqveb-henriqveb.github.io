@@ -103,21 +103,33 @@
         const emailRegex  = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
         const numberRegex = /(?:(^\+\d{2})?)(?:([1-9]{2})|([0-9]{3})?)(\d{4,5})(\d{4})/;
 
+        let inputsValidated = new Array(campos.length);
+        inputsValidated.fill(0);
+
         form.addEventListener('submit', (event) => {
             nameValidate();
             emailValidate();
             mainPasswordValidate();
             comparePassword();
+
+            let redirect = inputsValidated.every(elemento => elemento === 1);
+
+            if (!redirect) {
+                event.preventDefault();
+                alert('Preencha o formulário corretamente!');
+            }
         });
 
         function setError(index) {
             campos[index].style.border = '2px solid red';
             spans[index].style.display = 'block';
+            inputsValidated[index] = 0;
         }
 
         function removeError(index) {
             campos[index].style.border = '';
             spans[index].style.display = 'none';
+            inputsValidated[index] = 1;
         }
 
         function nameValidate() {
